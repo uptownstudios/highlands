@@ -60,9 +60,6 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<div id="projects-list">
-		<?php get_template_part( 'template-parts/projects-list' ); ?>
-	</div>
 	<header id="masthead" class="site-header" role="banner">
 		<!-- <div class="logo-wrapper hide-for-small-only">
 			<?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); } ?>
@@ -75,13 +72,6 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
-			<div class="top-bar-left">
-				<ul class="project-filters">
-					<li class="projects">
-						<a href="#" class="show-project-filters">Projects</a>
-					</li>
-				</ul>
-			</div>
 			<div class="top-bar-middle">
 				<ul class="menu">
 					<li class="home"><?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); } ?></li>
