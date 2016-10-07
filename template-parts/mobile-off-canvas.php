@@ -10,6 +10,9 @@
 <nav class="off-canvas position-right" id="mobile-menu" data-off-canvas data-position="right" role="navigation">
   <?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); } ?>
   <?php foundationpress_mobile_nav(); ?>
+  <div class="searchform-wrapper">
+    <?php get_search_form(); ?>
+  </div>
   <?php get_template_part('template-parts/social-media'); ?>
 </nav>
 

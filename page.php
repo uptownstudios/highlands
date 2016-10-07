@@ -12,7 +12,7 @@
 
  get_header(); ?>
 
- <?php get_template_part( 'template-parts/title-bar' ); ?>
+ <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<div class="breadcrumbs-wrap"><nav aria-label="You are here:" role="navigation"> <ul class="breadcrumbs">','</ul></nav></div>'); } ?>
 
  <div id="page" role="main">
 

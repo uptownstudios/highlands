@@ -104,6 +104,11 @@
 
 		});
 
+		// Show/Hide Search Form
+		$('button.searchform-trigger').click(function() {
+			$('.searchform-wrapper').toggleClass('show');
+		});
+
 	  // Back to top script
 	  $('#back-top').hide();
 	  $(function () {
@@ -361,10 +366,10 @@
         shrinkOn = jQuery('#masthead').height(),
         header = document.querySelector("body");
       if (distanceY > shrinkOn) {
-        classie.add(header,"darken-header");
+        classie.add(header,"shrink-header");
       } else {
-        if (classie.has(header,"darken-header")) {
-          classie.remove(header,"darken-header");
+        if (classie.has(header,"shrink-header")) {
+          classie.remove(header,"shrink-header");
         }
       }
   	});
@@ -442,14 +447,14 @@
 	//Light header switch Waypoint script
 	shrinkOn = jQuery('#masthead').height() * 2;
 
-	var sharewaypoint = new Waypoint({
-		element: document.getElementById('mission'),
-		handler: function(direction) {
-			jQuery('#masthead').toggleClass('reverse-header');
-			jQuery('.down-arrow').removeClass('animated');
-		},
-		offset: shrinkOn
-	});
+	// var sharewaypoint = new Waypoint({
+	// 	element: document.getElementById('toggle-reverse'),
+	// 	handler: function(direction) {
+	// 		jQuery('#masthead').toggleClass('reverse-header');
+	// 		jQuery('.down-arrow').removeClass('animated');
+	// 	},
+	// 	offset: shrinkOn
+	// });
 
 </script>
 

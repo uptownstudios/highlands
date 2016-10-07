@@ -53,6 +53,7 @@ function bs_social_urls_shortcode( $atts ) {
       <?php if( get_theme_mod('facebook')): ?><li class="facebook"><a href="<?php echo get_theme_mod('facebook','default'); ?>" target="_blank" title="Find us on Facebook"><i class="fa fa-facebook"></i></a></li><?php endif; ?>
       <?php if( get_theme_mod('twitter')): ?><li class="twitter"><a href="<?php echo get_theme_mod('twitter','default'); ?>" target="_blank" title="Follow us on Twitter"><i class="fa fa-twitter"></i></a></li><?php endif; ?>
       <?php if( get_theme_mod('linkedin')): ?><li class="linkedin"><a href="<?php echo get_theme_mod('linkedin','default'); ?>" target="_blank" title="Connect with us on LinkedIn"><i class="fa fa-linkedin"></i></a></li><?php endif; ?>
+			<?php if( get_theme_mod('flickr')): ?><li class="flickr"><a href="<?php echo get_theme_mod('flickr','default'); ?>" target="_blank" title="Check us out on Flickr"><i class="fa fa-flickr"></i></a></li><?php endif; ?>
       <?php if( get_theme_mod('instagram')): ?><li class="instagram"><a href="<?php echo get_theme_mod('instagram','default'); ?>" target="_blank" title="Follow us on Instagram"><i class="fa fa-instagram"></i></a></li><?php endif; ?>
       <?php if( get_theme_mod('youtube')): ?><li class="youtube"><a href="<?php echo get_theme_mod('youtube','default'); ?>" target="_blank" title="Check out our YouTube Channel"><i class="fa fa-youtube-play"></i></a></li><?php endif; ?>
       <?php if( get_theme_mod('pinterest')): ?><li class="pinterest"><a href="<?php echo get_theme_mod('pinterest','default'); ?>" target="_blank" title="Follow us on Pinterest"><i class="fa fa-pinterest"></i></a></li><?php endif; ?>
@@ -128,3 +129,15 @@ ob_start(); ?>
 <?php $bs_social_variable = ob_get_clean();
 return $bs_social_variable;
 }
+
+
+function bs_footer_sidebar_params($params) {
+  $sidebar_id = $params[0]['id'];
+  if ( $sidebar_id == 'footer-widgets' ) {
+    $total_widgets = wp_get_sidebars_widgets();
+    $sidebar_widgets = count($total_widgets[$sidebar_id]);
+    $params[0]['before_widget'] = str_replace('class="', 'class="large-' . floor(12 / $sidebar_widgets) . ' ', $params[0]['before_widget']);
+  }
+  return $params;
+}
+add_filter('dynamic_sidebar_params','bs_footer_sidebar_params');
