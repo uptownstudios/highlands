@@ -120,6 +120,26 @@ h2 span.sub-title {
   font-size: 65%;
   margin: 10px 0;
 }
+h2 {
+  font-size: 3.5rem !important;
+  line-height: 1.1 !important;
+}
+h3 {
+  font-size: 1.75rem !important;
+  line-height: 1.1 !important;
+}
+h4 {
+  font-size: 1.5rem !important;
+  line-height: 1.1 !important;
+}
+h5 {
+  font-size: 1.125rem !important;
+  line-height: 1.1 !important;
+}
+h6 {
+  font-size: 1rem !important;
+  line-height: 1.1 !important;
+}
 .off-canvas-content #masthead, .off-canvas-content section.container, .off-canvas-content #footer-container {
   // max-width: 1600px;
   margin: 0 auto;
@@ -528,6 +548,10 @@ header#masthead.sticky-header {
     ul#menu-secondary-nav li:last-child a {
       padding: 40px 10px 0 0;
     }
+    ul#menu-secondary-nav .active > a {
+      background: none;
+      color: #000
+    }
     li.my-highlands a {
       position: relative;
     }
@@ -694,6 +718,14 @@ header#masthead.sticky-header {
       font-size: 14px !important;
     }
 
+  }
+
+}
+.translated-ltr .header-inner,
+.translated-rtl .header-inner {
+
+  .top-bar-right {
+    width: 315px !important;
   }
 
 }
@@ -878,6 +910,7 @@ padding-top: 20px !important;
   .top-bar .top-bar-bottom .menu > li.menu-item-has-children > a {
     padding-left: 15px !important;
     padding-right: 15px !important;
+    letter-spacing: -.04rem;
   }
   .top-bar .top-bar-bottom .menu > li > a {
     font: 700 1.2rem/60px "mr-eaves-modern", Helvetica, Arial, sans-serif;
@@ -1238,9 +1271,8 @@ body.shrink-logo {
   article h3.lcp_post,
   article h3.lcp_post a {
     font-family: $mreaves;
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     margin: 0;
-    line-height: 1.1;
     color: #3c5f90;
     margin: 0;
     line-height: 1.1;
@@ -1426,6 +1458,25 @@ body.shrink-logo {
   }
   .home section.lcp_catlist article img {
     margin-bottom: 4px;
+  }
+  .bs-two-col {
+    display: block;
+    width: 100%;
+    vertical-align: middle;
+    padding-left: 30px;
+    margin-bottom: 30px;
+  }
+  .bs-two-col:last-of-type {
+    margin-bottom: 0;
+  }
+  .twitter-header,
+  .twitter-feed {
+    display: block;
+    width: 100% !important;
+    text-align: center;
+  }
+  .twitter-header:after {
+    font-size: 3rem;
   }
 }
 
@@ -1685,11 +1736,12 @@ div#page.archives-wrapper {
 .portal-wrapper {
 
   .portal {
-    padding: 2rem 1rem;
+    padding: 1rem;
     margin: 0;
     display: table;
     width: 100%;
-    margin-bottom: 30px;
+    min-height: 106px;
+    margin-bottom: 20px;
   }
   .portal-wrapper .portal.portal-3 {
     margin-bottom: 0;
@@ -1715,7 +1767,7 @@ div#page.archives-wrapper {
     margin: 0;
     text-transform: uppercase;
     font-family: $mreaves;
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
   .portal-1 {
     background: $pink;
@@ -1726,6 +1778,15 @@ div#page.archives-wrapper {
   .portal-3 {
     background: $teal;
   }
+}
+
+/* 4d. Sitemap Page Styles */
+ul.page-list > li.page_item_has_children > a {
+  color: #000 !important;
+  cursor: text;
+}
+ul.page-list > li.page_item_has_children > a:before {
+  display: none;
 }
 
 
@@ -1742,7 +1803,7 @@ div#page.archives-wrapper {
 }
 #footer-container #footer h6 {
   color: $white;
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
   text-transform: capitalize;
   font-family: $mreaves;
 }
@@ -1824,8 +1885,7 @@ div#page.archives-wrapper {
   #footer article.large-4:first-child,
   #footer article.large-4:nth-child(2),
   #footer article.large-4:nth-child(3) {
-    padding-left: 0;
-    padding-right: 0;
+
   }
 }
 @media #{$break480} {
